@@ -34,7 +34,6 @@
             border-radius: 1px;
             animation: animate 5.0s linear infinite;
             margin-bottom: 10rem;
-
         }
 
         #time {
@@ -65,34 +64,8 @@
         }
 
         /*-------------------------------------------  Media Queries ----------------------------------*/
-        @media (max-width:320px) {
-            .container {
-                width: 50%;
 
-                transform: scale(.5);
-                position: absolute;
-            }
 
-            .head {
-                position: absolute;
-                top: 70%;
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width:390px) {
-            .container {
-                width: 100%;
-                transform: scale(.1);
-                position: absolute;
-            }
-
-            .head {
-                position: absolute;
-                top: 70%;
-                font-size: 1rem;
-            }
-        }
 
         @media (max-width:480px) {
             .container {
@@ -103,7 +76,36 @@
 
             .head {
                 position: absolute;
-                top: 70%;
+                top: 60%;
+                font-size: 1rem;
+            }
+        }
+
+
+        @media (max-width:375px) {
+            .container {
+                width: 150%;
+                transform: scale(.5);
+                /* position: absolute; */
+            }
+
+            .head {
+                position: absolute;
+                top: 60%;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width:320px) {
+            .container {
+                width: 200%;
+                transform: scale(.4);
+                /* position: absolute; */
+            }
+
+            .head {
+                position: absolute;
+                top: 60%;
                 font-size: 1rem;
             }
         }
