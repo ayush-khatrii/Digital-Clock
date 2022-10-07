@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-color: rgb(17, 17, 17);
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgb(111, 0, 255), rgba(255, 0, 200, 0.815));
+            padding: 5px;
+            border-radius: 1px;
+            animation: animate 5.0s linear infinite;
+            margin-bottom: 10rem;
+
+        }
+
+        #time {
+            padding: 10px;
+            display: flex;
+            border-radius: 1px;
+            padding: 20px;
+            font-size: 5rem;
+            background-color: rgb(17, 17, 17);
+            color: rgb(255, 255, 255);
+
+        }
+
+        @keyframes animate {
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .head {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 55%;
+            font-size: 1.5rem;
+        }
+
+        /*-------------------------------------------  Media Queries ----------------------------------*/
+        @media (max-width:320px) {
+            .container {
+                width: 50%;
+
+                transform: scale(.5);
+                position: absolute;
+            }
+
+            .head {
+                position: absolute;
+                top: 70%;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width:390px) {
+            .container {
+                width: 100%;
+                transform: scale(.1);
+                position: absolute;
+            }
+
+            .head {
+                position: absolute;
+                top: 70%;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width:480px) {
+            .container {
+                width: 100%;
+                transform: scale(.5);
+                position: absolute;
+            }
+
+            .head {
+                position: absolute;
+                top: 70%;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="head">
+        </h1>
+        Made by &#10084;&#65039; Ayush Khatri
+        <h1>
+    </div>
+    <div class="container">
+        <div id="time"></div>
+    </div>
+
+
+</body>
+
+
+<script>
+    setInterval(() => {
+        const time = document.querySelector("#time");
+        let date = new Date();
+        let hrs = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        let meredian = "AM"
+        if (hrs > 12) {
+            hrs = hrs - 12;
+            meredian = "PM";
+        }
+        if (hrs == 0) {
+            meredian = "AM"
+        }
+        if (hrs < 10) {
+            hrs = "0" + hrs;
+        }
+        if (min < 10) {
+            min = "0" + min;
+        }
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+
+
+        let newTime = hrs + ":" + min + ":" + sec + " " + meredian;
+        document.getElementById("time").innerText = newTime;
+    },);
+</script>
+
+</html>
